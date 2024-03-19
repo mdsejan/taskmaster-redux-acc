@@ -4,13 +4,12 @@ import { useDispatch } from "react-redux";
 import { addTask } from "../../redux/features/tasks/taskSlice";
 
 const AddTaskModal = ({ isOpen, setIsOpen }) => {
-  const { register, handleSubmit, reset } = useForm();
+  const { register, handleSubmit } = useForm();
   const dispatch = useDispatch();
 
-  const onCancel = () => {
-    reset();
-    setIsOpen(false);
-  };
+  // const onCancel = () => {
+  //   setIsOpen(false);
+  // };
 
   const onSubmit = (data) => {
     // console.log(data);
@@ -86,12 +85,12 @@ const AddTaskModal = ({ isOpen, setIsOpen }) => {
           >
             Submit
           </button>
-          <button
+          {/* <button
             onClick={onCancel}
             className="mt-4 bg-red-500 text-white py-2 px-6 rounded-md"
           >
             Cancel
-          </button>
+          </button> */}
         </div>
       </form>
     </Modal>
